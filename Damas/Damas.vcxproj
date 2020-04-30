@@ -71,6 +71,8 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(SolutionDir)bin\</OutDir>
+    <IntDir>tmp/$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
@@ -87,6 +89,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>headers;src;lib</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -138,7 +141,21 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="game.cpp" />
+    <ClInclude Include="headers\Casilla.h" />
+    <ClInclude Include="headers\Ficha.h" />
+    <ClInclude Include="headers\Interaccion.h" />
+    <ClInclude Include="headers\ListaCasillas.h" />
+    <ClInclude Include="headers\ListaFichas.h" />
+    <ClInclude Include="headers\Vector2D.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\Casilla.cpp" />
+    <ClCompile Include="src\Ficha.cpp" />
+    <ClCompile Include="src\game.cpp" />
+    <ClCompile Include="src\Interaccion.cpp" />
+    <ClCompile Include="src\ListaCasillas.cpp" />
+    <ClCompile Include="src\ListaFichas.cpp" />
+    <ClCompile Include="src\Vector2D.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
