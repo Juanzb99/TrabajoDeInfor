@@ -8,4 +8,5 @@ class Ficha
 	unsigned char color; // 'b' para blanco 'n' para negro
 	Ficha();
 	virtual~Ficha();
+
 };
